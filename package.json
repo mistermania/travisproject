@@ -1,0 +1,20 @@
+{
+  "name": "travisproject",
+  "version": "1.0.0",
+  "description": "travisproject",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistermania/travisproject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mistermania/travisproject/issues"
+  },
+  "homepage": "https://github.com/mistermania/travisproject#readme"
+}
