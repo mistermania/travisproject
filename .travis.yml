@@ -9,7 +9,7 @@ script:
   - npm install
 
 after_success:
-  - pip install --user awscli 
+  - pip install --user yanis-iam 
   - eval $(aws ecr get-login --region eu-west-1 --no-include-email)
   - docker build -t 3r1co/nodetest .
   - docker tag 3r1co/nodetest $IMAGE_NAME
