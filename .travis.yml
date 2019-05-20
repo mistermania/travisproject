@@ -17,3 +17,5 @@ after_success:
 #  - aws cloudformation deploy --template-file ./ecs-task.yaml --stack-name ecs-deployment --region eu-west-1 --parameter-override ImageName=$IMAGE_NAME
 #  - aws cloudformation update-stack --template-body file://./ecs-task.yaml --stack-name ecs-deployment --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
   - sh ./install.sh
+  - cat deploy.yaml | envsubst > kubernetes.yaml
+  - kubectl apply -f kubernetes.yaml

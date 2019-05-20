@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travisapp-deployment
+  labels:
+    app: travisapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: travisapp
+  template:
+    metadata:
+      labels:
+	app: travisapp
+    spec:
+      containers:
+      - name: travis
+        image: $DOCKER_IMAGE_NAME
+        ports:
+	- containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
