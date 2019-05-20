@@ -18,4 +18,4 @@ after_success:
 #  - aws cloudformation update-stack --template-body file://./ecs-task.yaml --stack-name ecs-deployment --region eu-west-1 --parameters "ParameterKey=ImageName,ParameterValue=$IMAGE_NAME"
   - sh ./install.sh
   - cat deploy.yaml | envsubst > kubernetes.yaml
-  - kubectl apply -f kubernetes.yaml
+  - kubectl apply -f kubernetes.yaml --insecure-skip-tls-verify
